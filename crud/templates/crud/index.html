@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<h3>index page...</h3>
+
+{% comment %}
+<!--{% for row in data %}-->
+
+<!--<h4>id:{{ row.id }}</h4>-->
+<!--<h4>Name:{{ row.emp_name }}</h4>-->
+<!--<h4>Email:{{ row.emp_email }}</h4>-->
+<!--<h4>Address:{{ row.emp_address }}</h4>-->
+<!--{% endfor %}-->
+
+
+{% endcomment %}
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>EMP NAME</th>
+        <th>EMP EMAIL</th>
+        <th>EMP ADDRESS</th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr>
+            <td>{{ row.id }}</td>
+            <td>{{ row.emp_name }}</td>
+            <td>{{ row.emp_email }}</td>
+            <td>{{ row.emp_address }}</td>
+            <td>
+                <a href="/crud/update?id={{ row.id }}">UPDATE</a>
+                <a onclick="return deleteIteam()" href="/crud/delete?id={{ row.id }}">DELETE</a>
+                 <a href="/crud/view?id={{ row.id }}">VIEW</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+<script>
+    function deleteIteam(){
+        if(confirm(' Are you sure to delete this iteam?'))
+        return true;
+        else return false;
+    }
+
+</script>
+
+{% endblock %}

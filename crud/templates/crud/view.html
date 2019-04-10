@@ -1,0 +1,11 @@
+<{% extends 'layout.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<h3>view page...</h3>
+
+<h3>ID: {{ data.id }}</h3>
+<h3>Name: {{ data.emp_name }}</h3>
+<h3>Email: {{ data.emp_email }}</h3>
+<h3>Address: {{ data.emp_address }}</h3>
+
+{% endblock %}

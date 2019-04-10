@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+<!DOCTYPE html>
+
+{% block content %}
+
+<h3>Hello Django...........</h3>
+
+<!--<h3>{{ name }}</h3>-->
+<!--<h3>{{ email }}</h3>-->
+
+<!--{% if name == ""%}-->
+
+<!--    <h3>Empty name..</h3>-->
+
+<!--{% else %}-->
+<!--<h3>Name: {{ name }}</h3>-->
+<!--    {% endif %}-->
+
+<!--single value fetch -->
+<!--{{ l1.0 }}-->
+
+<!--{% for i in d1 %}-->
+<!--<p>{{ i }}</p>-->
+<!--{% endfor %}-->
+
+<!--{% for i in l1 %}-->
+<!--<p>{{ i }}</p>-->
+<!--{% endfor %}-->
+
+<!--{% for k,v in d2.items %}-->
+<!--<p>{{ k }}:{{ v }}</p>-->
+<!--{% endfor %}-->
+
+    {% load crispy_forms_tags %}
+<form action="" method="post" novalidate>{% csrf_token %}
+<!--        {{ form.as_p }}-->
+    {{ form | crispy }}
+    <input type="submit" value="submit">
+    </form>
+
+{% endblock %}

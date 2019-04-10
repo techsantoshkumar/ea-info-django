@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h3>Sigin.......</h3>
+{% if request.user.username %}
+<h3>welcome:{{ request.user.username }}</h3>
+
+<h4>city:{{ request.session.city }}</h4>
+<h4>Address:{{ request.session.address }}</h4>
+<a href="/logout">Logout ({{ request.user.username }})</a>
+{% else %}
+<h4><a href="/signin">Login again...</a></h4>
+{% endif %}
+{% endblock %}

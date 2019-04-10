@@ -144,6 +144,7 @@ STATIC_URL = '/static/'
 #     "F:/node-workspace/django-workspace/webapplication/static/",
 # )
 # or
+# STATIC_URL = '/static/'
 # STATICFILES_DIRS = (
 #     os.path.join(BASE_DIR, 'static/'),
 # )
